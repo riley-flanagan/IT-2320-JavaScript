@@ -1,29 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Lab 1</title>
 	<style>
-		*{font-family:Roboto,Helvetica,Arial,sans-serif;}
-		body{padding:10px;}
+		* {
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+		}
+
+		body {
+			padding: 10px;
+		}
 	</style>
 </head>
+
 <body>
 	<h1>IT-2320 - Lab 1: Language Constructs</h1>
-	<h2>Student Name: </h2>
+	<!--1.-->
+	<h2>Student Name: Riley Flanagan</h2>
+
+
+
 	<p>
-	Output:
-	</p><div id="output"></div>
+		Output:
+	</p>
+	<div id="output">
+
+	</div>
 	<p></p>
 	<p>
-	Values:<br>
-	</p><div id="values"></div>
-	<p></p> 
+		Values:<br>
+	</p>
+	<div id="values"></div>
+	<p></p>
 	<p>
-	Sum:
-	</p><div id="sum"></div>
+		Sum:
+	</p>
+	<div id="sum"></div>
 	<p></p>
 	<!-- Place your JavaScript code here -->
-</body>
+	<!--2.-->
+	<script>
+		/* 3. 
+		Author = Riley Flanagan
+		Class = IT-2320
+		*/
+		/*4.*/let name = "Riley Nicole Flanagan"
 
+		/*6.*/console.log("Note: Lab 1. Completed by " + name)
+		/*7.*/document.getElementById("output").innerHTML = "innerHTML value set";
+
+		let blah = "";
+
+		/*8.*/for (let i = 1; i <= 10; i++) {
+			blah += i + "<br>";
+		}
+
+		document.getElementById("values").innerHTML = blah;
+
+		let sum = 0;
+		let i2 = 1;
+
+		/*9.*/while (i2 <= 10) {
+			sum += i2;
+			i2++;
+		}
+		document.getElementById("sum").innerHTML = sum;
+		/*10.*/
+		let a = 23;
+		let b = 400;
+		let c = 3000000;
+		document.write(a + b + c + "<br>");
+		/*11.*/
+		if (a < b) {
+			document.write("a < b" + "<br>");
+		}
+		else {
+			document.write("a > b" + "<br>");
+		}
+
+		/*5.*/document.write("Lab 1. Completed by " + name)
+
+
+	</script>
+
+</body>
