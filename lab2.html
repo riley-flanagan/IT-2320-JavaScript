@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="utf-8" />
+	<style>
+		/* CSS Styles */
+		* {
+			font-family: Roboto, Helvetica, Arial, sans-serif;
+
+			body {
+				padding: 10px;
+			}
+	</style>
+	<title>Lab 2</title>
+	<script>
+		// 6. Add a variable (outside of any function) to the page called secondsSinceLoad and give it a starting value of 0.
+		let secondsSinceLoad = 0;
+
+		// 7. Add an arrow function (no curly brackets, no parenthesis, no function keyword) called updateSeconds(). In the function, add 1 to the value of secondsSinceLoad. Display the current value of secondsSinceLoad in the HTML div provided with id="seconds". The display must happen from in the function.
+		const updateSeconds = () => document.getElementById('seconds').textContent = ++secondsSinceLoad;
+
+		// add functions here
+		// 1. Add a function called add(a, b). Return the sum of a and b.
+		function add(a, b) {
+			return a + b;
+		}
+		// 2. Add a function called subtract(a, b). Return a-b.
+		function subtract(a, b) {
+			return a - b;
+		}
+		// 3. Add a function called sum() with no parameters. Use the arguments and return a sum of all of the values passed to the function regardless of the number of arguments.
+		function sum(...arguments) {
+			return arguments.reduce(
+				(acc, next) => {
+					return acc + next;
+				}
+			);
+		};
+		// 4. Add a function called setTitle() that outputs the "Hello, this is Lab 2!" to the h1 element with id="title".
+		function setTitle() {
+			document.getElementById("title").textContent = "Hello, this is Lab 2!";
+		}
+		// 5. Add a function called studentName(name) that outputs your full name to the div element with id="student".
+		function studentName(name) {
+			document.getElementById("student").textContent = name;
+		}
+		// 6. 
+
+
+
+		function helloWorld() {
+			document.write("Hello World!\n");
+		}
+		// this is a function that is called when the page finishes loading
+		// put any functions that are called on page load into theis single function
+		document.addEventListener("DOMContentLoaded", function () {
+			// 2.1 Call setTitle() when the page loads. I have provided a page load event below. Put all of the functions that should be called when the page loads into that single function.
+			setTitle();
+			// 2.2 When the page loads, use setInterval() to call updateSeconds() every 1 second.
+			studentName("Riley Flanagan");
+			setInterval(updateSeconds, 1000);
+			// put your function calls here
+		});
+	</script>
+</head>
+
+<body>
+	<h1 id="title">Title</h1>
+	<h2 id="student">Student Name</h2>
+	Seconds since page loaded: <div id="seconds"></div>
+	<script>
+		// any calls using document.write() here
+		helloWorld();
+		// 3.1 Call and output the results from add(10, 15); using document.writeln() at the end of the body element.
+		document.writeln(add(10, 15));
+		// 3.2 Call and output the results from subtract(45, 10); using document.writeln() at the end of the body element.
+		document.writeln(subtract(45, 10));
+		// 3.3 Call and output the results from sum(5, 10, 20, 30); using document.writeln() at the end of the body element.
+		document.writeln(sum(5, 10, 20, 30));
+
+
+	</script>
+</body>
+
+</html>
