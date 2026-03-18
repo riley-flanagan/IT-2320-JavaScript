@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Lab 3</title><style>* {
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        p {
+            padding-bottom: 20px;
+        }
+
+        b {
+            display: block;
+        }
+    </style>
+    </style>
+    <title>Lab 2</title>
+    <script>
+        // 1. Create a class called student with properties name, major, gpa, and classesTaken (an array of course ids taken, i.e. IT-1025, IT-1050, IT-2310.
+
+        class Student {
+            constructor(name, major, gpa, classesTaken) {
+                this.name = name;
+                this.major = major;
+                this.gpa = gpa;
+                this.classesTaken = classesTaken;
+            }
+
+            displayProperties() {
+                document.writeln(`Name: ${this.name}<br> Major: ${this.major}<br> GPA: ${this.gpa}<br> Classes: ${this.classesTaken.join(', ')} <br>`);
+            }
+        }
+
+        const myStudent = new Student("Riley Flanagan", "Software Development", 3.0, ["IT-1025", "IT-2310", "IT-1050"]);
+        myStudent.displayProperties();
+        document.writeln("<br>");
+
+
+        // 2. Create an object (do not create a class for this one) called Course. Important: you should not create a course class. Include the following:
+        // Properties and values: courseId="IT-2320", title="IT-2320", crsDesc="Interactive Internet Programming", creditHrs="4"
+        const Course = {
+            courseId: "IT-2320",
+            title: "IT-2320",
+            crsDesc: "Interactive Internet Programming",
+            creditHrs: "4",
+
+            // Add a method to the object called displayCourse(). Use the object properties, a loop, or Object.values() along with document.writeln() to display all of the properties for your course object on the page.
+            displayCourse: function () {
+                Object.values(this).forEach(val => {
+                    if (typeof val !== 'function') document.writeln(val + " ");
+                });
+                document.writeln("<br>");
+            }
+        };
+        Course.displayCourse();
+        document.writeln("<br>");
+        // 3. Create an object called planet. Add properties name=Mercury and diameterMiles=3031.9.
+        const planet = {
+            name: "Mercury",
+            diameterMiles: 3031.9,
+        }
+
+        //  On a separate line of code after the object is created, add a property called millMilesFromEarth and assign a value of 48.
+
+        planet.millMilesFromEarth = 48;
+
+        // Output each property value using a document.writeln() and directly accessing the property. For example: document.writeln('Planet Name: ' + planet.name);
+
+        document.writeln('Planet Name: ' + planet.name + "<br>");
+        document.writeln('Diameter (Miles): ' + planet.diameterMiles + "<br>");
+        document.writeln('Million Miles from Earth: ' + planet.millMilesFromEarth + "<br>");
+
+        document.writeln("<br>");
+        // 4. Create a set called favoriteLanguages. Add the following values to it: "JavaScript", "Python", "Swift", "Dart".
+
+        let favoriteLanguages = new Set(["JavaScript", "Python", "Swift", "Dart"]);
+        // Use the following code to output all of the values in favoriteLanguages:
+
+        let count = 0;
+        for (let language of favoriteLanguages) {
+            count++;
+            if (count === 1) {
+                document.writeln("Favorite Languages: ");
+            }
+            if (count === favoriteLanguages.size) {
+                document.writeln(language + ".");
+            } else {
+                document.writeln(language + ", ");
+            }
+        }
+
+        document.writeln("<br> <br>");
+
+
+        // 5. Create a map called creditHrs. Use the map to store course numbers and the corresponding credit hours for each of the following courses: IT-1025: 3, IT-1050:3, IT-2310: 3, IT-2320:4, IT-2030:4, IT-2351:4, IT-2650:4. 
+
+        let creditHrs = new Map([
+            ["IT-1025", 3],
+            ["IT-1050", 3],
+            ["IT-2310", 3],
+            ["IT-2320", 4],
+            ["IT-2030", 4],
+            ["IT-2351", 4],
+            ["IT-2650", 4]
+        ]);
+
+        // Use a get() to find the credit hours for IT - 2030.
+        document.writeln("Credits for IT-2030: " + creditHrs.get("IT-2030"));
+        document.writeln("<br><br>");
+        // Use a loop to output all of the values.
+        for (let [course, hrs] of creditHrs) {
+            document.writeln((`${course}: ${hrs}`));
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
