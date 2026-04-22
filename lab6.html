@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lab 6</title>
+  <style>
+    * {
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>IT-2320<br>Lab 6 - AJAX, Frameworks, promises</h1>
+  <h2>Student Name: Riley Flanagan<h2>
+      <p>
+        AJAX Response:<br>
+      <div id="ajax"></div>
+      </p>
+      <p>
+        Fetch Response:<br>
+      <div id="fetch"></div>
+
+      </p>
+
+
+      <script>
+        // 1. Use AJAX to retrieve a response from ajax.txt. Populate div with id="ajax" with the response from the ajax call.
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ajax.txt', true);
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            document.getElementById('ajax').innerHTML = xhr.responseText;
+          }
+        };
+        xhr.send();
+
+        //  2. Use Fetch API to retrieve a response from fetch.txt. Populate div with id="fetch" with the response from the fetch api call.
+
+        fetch('fetch.txt')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('fetch').innerHTML = data;
+          })
+          .catch(error => console.error('Error fetching file:', error));
+
+
+      </script>
+</body>
+
+</html>
