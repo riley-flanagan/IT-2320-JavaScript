@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Lab 7 - JSON</h1>
+  <h2>Student Name: Riley Flanagan</h2>
+  <p>
+    <b>Step 1</b>
+  <blockquote>Given the following: '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming"}'<br><br>
+    Parse it to a JSON object called courseObj using JSON.parse().<br><br>Then, use the JavaScript object called
+    courseObj to output the title using document.writeln().<br><br>
+    <script>
+      // Solution 1
+      const jsonStr = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming"}';
+      const courseObj = JSON.parse(jsonStr);
+      document.writeln(courseObj.title);
+    </script>
+  </blockquote>
+  </p>
+  <p>
+    <b>Step 2</b>
+  <blockquote> Given:
+    const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';<br><br>
+    First, use JSON.parse() to parse it to a JavaScript array.<br><br>Then, create a loop to output each of the values
+    in array using document.writeln() separated by a newline <br>.<br>
+    <script>
+      // Solution 2
+      const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';
+      const theArray = JSON.parse(text);
+      for (let x of theArray) {
+        document.writeln(x + "\n check this");
+      }
+    </script>
+  </blockquote>
+  </p>
+  <p>
+    <b>Step 3</b>
+  <blockquote>Given:
+    const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming",
+    "description":"JavaScript"}';<br><br>Use JSON.parse() to parse it to an object.<br><br>Use dot (.) notation to
+    movidy the value of description to "An Introduction to JavaScript".<br><br>Use dot (.) notation to output all of the
+    values using a single document.writeln() statement.<br><br>
+    <script>
+      // Solution 3
+      const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';
+      const myObj = JSON.parse(myJSON);
+      myObj.description = "An Introduction to JavaScript";
+      document.writeln(myObj.id + ", " + myObj.credits + ", " + myObj.title + ", " + myObj.description);
+    </script>
+  </blockquote>
+  </p>
+  <p>
+    <b>Step 4</b>
+  <blockquote>Create an array (called courseArray) and JSON string (called courseJSON) with the following values:
+    IT-1025, IT-2310, IT-2320.<br><br>Use any technique to output all of the values in both the array and JSON
+    string.<br><br>In a comment, explain the technique used.<br><br>
+    <script>
+      // Solution 4
+      const courseArray = ["IT-1025", "IT-2310", "IT-2320"];
+      const courseJSON = '["IT-1025", "IT-2310", "IT-2320"]';
+      // hello today i am using the join() command to create and return a new string by concatenating all of the elements in the array. This will be sperated my commas :)
+      document.writeln("Array: " + courseArray.join(", ") + "<br>");
+      document.writeln("JSON String: " + courseJSON);
+    </script>
+  </blockquote>
+  </p>
+  <p>
+    <b>Step 5</b>
+  <blockquote>Using the "Array as JSON" example on https://www.w3schools.com/js/js_json_server.asp, read the values from
+    courses.txt.<br><br>Output all of the values in the array.<br><br>
+    <script>
+      // Solution 5
+      const xmlhttp5 = new XMLHttpRequest();
+      xmlhttp5.onload = function () {
+        const myArr5 = JSON.parse(this.responseText);
+        document.writeln(myArr5.join(", "));
+      };
+      xmlhttp5.open("GET", "courses.txt");
+      xmlhttp5.send();
+    </script>
+  </blockquote>
+  </p>
+  <p>
+    <b>Step 6</b>
+  <blockquote>Using the "JSON From a Server" example on https://www.w3schools.com/js/js_json_server.asp, request JSON
+    from the file it1025.txt.<br><br>Output the value of title using a document.writeln().<br><br>
+    <script>
+      // Solution 6
+      const xmlhttp6 = new XMLHttpRequest();
+      xmlhttp6.onload = function () {
+        const myObj6 = JSON.parse(this.responseText);
+        document.writeln(myObj6.title);
+      };
+      xmlhttp6.open("GET", "it1025.txt");
+      xmlhttp6.send();
+    </script>
+  </blockquote>
+  </p>
+  <br><br><br><br><br><br>
+</body>
+
+</html>
