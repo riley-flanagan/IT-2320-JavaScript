@@ -75,12 +75,13 @@
     <b>Step 5</b>
   <blockquote>Using the "Array as JSON" example on https://www.w3schools.com/js/js_json_server.asp, read the values from
     courses.txt.<br><br>Output all of the values in the array.<br><br>
+    <span id="output5"></span>
     <script>
       // Solution 5
       const xmlhttp5 = new XMLHttpRequest();
       xmlhttp5.onload = function () {
         const myArr5 = JSON.parse(this.responseText);
-        document.writeln(myArr5.join(", "));
+        document.getElementById("output5").innerHTML = myArr5.join(", ");
       };
       xmlhttp5.open("GET", "courses.txt");
       xmlhttp5.send();
@@ -91,12 +92,13 @@
     <b>Step 6</b>
   <blockquote>Using the "JSON From a Server" example on https://www.w3schools.com/js/js_json_server.asp, request JSON
     from the file it1025.txt.<br><br>Output the value of title using a document.writeln().<br><br>
+    <span id="output6"></span>
     <script>
       // Solution 6
       const xmlhttp6 = new XMLHttpRequest();
       xmlhttp6.onload = function () {
         const myObj6 = JSON.parse(this.responseText);
-        document.writeln(myObj6.title);
+        document.getElementById("output6").innerHTML = myObj6.title;
       };
       xmlhttp6.open("GET", "it1025.txt");
       xmlhttp6.send();
